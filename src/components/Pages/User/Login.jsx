@@ -1,12 +1,14 @@
 import React from "react";
+import Navbar from "../../Navbar";
 
 function Login() {
   return (
     <section>
+      <Navbar />
       <section class="bg-gray-50 dark:bg-gray-900">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
-            href="#"
+            href="/"
             class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
           >
             <img
@@ -56,7 +58,7 @@ function Login() {
                 </div>
                 <div class="flex items-center justify-between">
                   <a
-                    href="#"
+                    href="/"
                     class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
                   >
                     Forgot password?
