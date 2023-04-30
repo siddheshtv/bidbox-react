@@ -1,17 +1,18 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Hero from "./components/HomePage/Hero";
-import Section2 from "./components/HomePage/Section2";
-import Footer from "./components/Footer";
+import Home from "./components/HomePage/Main";
+import Login from "./components/Pages/User/Login";
+import Signup from "./components/Pages/User/Signup";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="">
-      <Navbar />
-      <Hero />
-      <Section2 />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/register" element={<Signup />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
