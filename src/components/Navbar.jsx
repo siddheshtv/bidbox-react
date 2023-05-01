@@ -1,6 +1,9 @@
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Navbar() {
+  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
+
   return (
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -15,12 +18,33 @@ function Navbar() {
           </span>
         </a>
         <div class="flex md:order-2">
-          <a
-            href="/register"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Register
-          </a>
+          <div className="flex space-x-2">
+            {isAuthenticated ? (
+              <div className="flex space-x-4 items-center">
+                <button
+                  onClick={() => logout()}
+                  className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center mr-1 md:mr-0 transition duration-200"
+                >
+                  Logout
+                </button>
+                <a
+                  href="/account"
+                  className="text-black bg-white hover:text-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center mr-1 md:mr-0 transition duration-200"
+                >
+                  My Account
+                </a>
+              </div>
+            ) : (
+              <div>
+                <button
+                  onClick={() => loginWithRedirect()}
+                  className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center mr-1 md:mr-0 transition duration-200"
+                >
+                  Sign In
+                </button>
+              </div>
+            )}
+          </div>
           <button
             data-collapse-toggle="navbar-cta"
             type="button"
