@@ -21,12 +21,12 @@ function Navbar() {
           <div className="flex space-x-2">
             {isAuthenticated ? (
               <div className="flex space-x-4 items-center">
-                <button
-                  onClick={() => logout()}
+                <a
+                  href="/add"
                   className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center mr-1 md:mr-0 transition duration-200"
                 >
-                  Logout
-                </button>
+                  Sell
+                </a>
                 <a
                   href="/account"
                   className="text-black bg-white hover:text-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center mr-1 md:mr-0 transition duration-200"
