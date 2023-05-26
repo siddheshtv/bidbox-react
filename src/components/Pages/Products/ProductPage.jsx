@@ -253,7 +253,9 @@ function ProductPage() {
         </section>
       ) : (
         <section>
-          <h1>Please log in to view the product.</h1>
+          <h1 className="text-center text-4xl font-bold my-12">
+            Please log in to view the product in detail.
+          </h1>
         </section>
       )}
 
